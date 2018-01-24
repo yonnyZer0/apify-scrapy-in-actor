@@ -1,5 +1,4 @@
 FROM python:2
 RUN pip install scrapy
-COPY ./* ./
-CMD ["ls"]
+ADD ./* ./
 CMD [ "scrapy", "crawl", "forrester" ]
