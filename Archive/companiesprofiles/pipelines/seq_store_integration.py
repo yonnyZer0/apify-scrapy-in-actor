@@ -6,7 +6,6 @@ import os
 import errno
 import logging
 from time import sleep
-from bson import json_util
 
 import datetime
 
