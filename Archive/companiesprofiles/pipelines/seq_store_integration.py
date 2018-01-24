@@ -34,7 +34,10 @@ class SequentialStoreReaderPipeline(object):
     
     def close_spider(self, spider):
         #print(self.conn.get_records(self.store_id)[0])
+        print('---------------------------------------------------------------------------------')
+        print('JSON_LINK:','https://api.apify.com/v2/sequential-stores/' + self.store_id + '/records?format=json&limit=100000')
         print('STORE ID:',self.store_id)
+        print('---------------------------------------------------------------------------------')
         #del self.conn
     
     def process_item(self, item, spider):
