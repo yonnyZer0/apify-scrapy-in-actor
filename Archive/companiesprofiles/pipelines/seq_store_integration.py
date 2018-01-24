@@ -28,6 +28,9 @@ class SequentialStoreReaderPipeline(object):
         
     def open_spider(self, spider):
         self.store_id = json.loads( self.conn.create_store(spider.name)[0].decode() )['data']['id']
+        #delete old store POC
+        self.conn.delete_store(self.store_id)
+        self.store_id = json.loads( self.conn.create_store(spider.name)[0].decode() )['data']['id']
     
     def close_spider(self, spider):
         #print(self.conn.get_records(self.store_id)[0])
