@@ -1,0 +1,13 @@
+X-Cdn: Incapsula
+Content-Encoding: gzip
+Set-Cookie: JSESSIONID=6044F442714D04685CCC3AC272F2DA9B.iovenapp2; Path=/; Secure
+Set-Cookie: visid_incap_813294=dX25znNoQniRwW75sJedZVd3aFoAAAAAQUIPAAAAAAC1gvCc/fvb4dabCCm1/oUq; expires=Thu, 24 Jan 2019 08:00:42 GMT; path=/; Domain=.forrester.com
+Set-Cookie: incap_ses_630_813294=+XIqdq4sBmfcKqdGEja+CFd3aFoAAAAAxLhjxCQtZoiUIDm+GhOO/w==; path=/; Domain=.forrester.com
+Expires: Wed, 31 Dec 1969 19:00:00 EST
+Vary: Accept-Encoding
+Server: Apache-Coyote/1.1
+Pragma: no-cache
+Cache-Control: max-age=0, must-revalidate
+Date: Wed, 24 Jan 2018 12:08:56 GMT
+X-Iinfo: 10-1358261-1362569 NNNN CT(103 105 0) RT(1516795690976 44553) q(0 0 2 0) r(4 4) U5
+Content-Type: text/html;charset=UTF-8

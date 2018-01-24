@@ -1,0 +1,11 @@
+X-Cdn: Incapsula
+Content-Encoding: gzip
+Set-Cookie: incap_ses_524_813294=DeQeZCqQ+mT3KKSS5Z9FB1t3aFoAAAAAtS7azBRMs9a31pYRj7ciZA==; path=/; Domain=.forrester.com
+Expires: Wed, 31 Dec 1969 19:00:00 EST
+Vary: Accept-Encoding
+Server: Apache-Coyote/1.1
+Pragma: no-cache
+Cache-Control: max-age=0, must-revalidate
+Date: Wed, 24 Jan 2018 12:08:59 GMT
+X-Iinfo: 10-8445826-8445831 NNNN CT(69 68 0) RT(1516795738772 43) q(0 0 2 63) r(4 4) U5
+Content-Type: text/html;charset=UTF-8

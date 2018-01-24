@@ -1,0 +1,135 @@
+# -*- coding: utf-8 -*-
+
+from scrapy import Item, Field
+from scrapy.loader.processors import MapCompose, TakeFirst
+
+
+class BaseItem(Item):
+    def __init__(self, *args, **kwargs):
+        super(BaseItem, self).__init__(*args, **kwargs)
+
+class PageItem(BaseItem):
+    page_title = Field(
+        input_processor=MapCompose(unicode.strip),
+        output_processor=TakeFirst())
+    meta = Field()
+    url = Field(output_processor=TakeFirst())
+    canonical_url = Field(output_processor=TakeFirst())
+    source = Field(output_processor=TakeFirst())
+    referer = Field(output_processor=TakeFirst())
+    spider = Field(output_processor=TakeFirst())
+    scraped_date = Field(output_processor=TakeFirst())
+    scraped_date_native = Field()
+    data = Field()
+
+class ProfileItem(PageItem):
+
+    # contact data
+    company = Field(output_processor=TakeFirst())
+    company_url = Field(output_processor=TakeFirst())
+    profile_url = Field(output_processor=TakeFirst())
+    profile_rss = Field()
+    name_full = Field(output_processor=TakeFirst())
+    photo_url = Field()
+    photo_file = Field()
+    title = Field(output_processor=TakeFirst())
+    taxonomy_industry = Field(output_processor=TakeFirst())
+    taxonomy_market = Field(output_processor=TakeFirst())
+    taxonomy_topics = Field(output_processor=TakeFirst())
+    biography = Field(output_processor=TakeFirst())
+    bio_blurb = Field(output_processor=TakeFirst())
+    bio_speaker = Field(output_processor=TakeFirst())
+    bio_education = Field(output_processor=TakeFirst())
+    bio_personal = Field(output_processor=TakeFirst())
+    previous_bio = Field(output_processor=TakeFirst())
+    previous_positions = Field(output_processor=TakeFirst())
+    location = Field(output_processor=TakeFirst())
+    languages = Field(output_processor=TakeFirst())
+    experience_company = Field(output_processor=TakeFirst())
+    experience_industry = Field(output_processor=TakeFirst())
+    experience = Field(output_processor=TakeFirst())
+    certifications = Field(output_processor=TakeFirst())
+    memberships = Field(output_processor=TakeFirst())
+    influence = Field(output_processor=TakeFirst())
+    recognition = Field(output_processor=TakeFirst())
+    ideas = Field(output_processor=TakeFirst())
+    contact_briefing = Field(output_processor=TakeFirst())
+    contact_url = Field(output_processor=TakeFirst())
+    contact_email = Field(output_processor=TakeFirst())
+    contact_phone = Field(output_processor=TakeFirst())
+    contact_mobile = Field(output_processor=TakeFirst())
+    contact_fax = Field(output_processor=TakeFirst())
+    contact_other = Field(output_processor=TakeFirst())
+    url_blog = Field(output_processor=TakeFirst())
+    url_site = Field(output_processor=TakeFirst())
+    twitter = Field(output_processor=TakeFirst())
+    linkedin = Field(output_processor=TakeFirst())
+    slideshare = Field(output_processor=TakeFirst())
+    facebook = Field(output_processor=TakeFirst())
+
+    username = Field()
+    simplified_joined_name = Field()
+
+    split_title = Field()
+    split_first_name = Field()
+    split_mid_name = Field()
+    split_last_name = Field()
+    split_suffix = Field()
+
+
+    # emailhunter data
+    dont_use_emailhunter_pipeline = Field()
+    email_hunter_response = Field()
+
+    hunt_data_email = Field()
+    eh_data_score = Field()
+    eh_data_domain = Field()
+    eh_meta_params_name_first = Field()
+    eh_meta_params_name_last = Field()
+    eh_meta_params_domain = Field()
+    eh_meta_params_company = Field()
+
+    # clearbit data
+    dont_use_clearbit_pipeline = Field()
+    clearbit_response = Field()
+
+    cb_indexed_at = Field()
+    cb_name_full = Field()
+    cb_name_first = Field()
+    cb_name_last = Field()
+    cb_gender = Field()
+    cb_location = Field()
+    cb_timezone = Field()
+    cb_utcoffset = Field()
+    cb_geo_city = Field()
+    cb_geo_state = Field()
+    cb_geo_country = Field()
+    cb_geo_lat = Field()
+    cb_geo_lon = Field()
+    cb_bio = Field()
+    cb_site = Field()
+    cb_avatar = Field()
+    cb_twitter_handle = Field()
+    cb_twitter_id = Field()
+    cb_twitter_followers = Field()
+    cb_twitter_location = Field()
+    cb_twitter_site = Field()
+    cb_twitter_statuses = Field()
+    cb_twitter_avatar = Field()
+    cb_linkedin_handle = Field()
+    cb_facebook_handle = Field()
+    cb_googleplus_handle = Field()
+    cb_aboutme_handle = Field()
+    cb_aboutme_bio = Field()
+    cb_aboutme_avatar = Field()
+    cb_gravatar_handle = Field()
+    cb_gravatar_urls = Field()
+    cb_gravatar_avatar = Field()
+    cb_gravatar_avatars = Field()
+    cb_employment_name = Field()
+    cb_employment_title = Field()
+    cb_employment_role = Field()
+    cb_employment_seniority = Field()
+    cb_employment_domain = Field()
+
+    db_id = Field()

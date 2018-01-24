@@ -1,0 +1,7 @@
+projects:
+  default: 110879
+
+apikeys:
+  default: 99bb8cc12bca4f41870260c2f58ed1c6
+
+requirements_file: requirements.txt
