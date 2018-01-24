@@ -3,7 +3,7 @@
 import urllib2 as u2
 import os
 #import urllib.parse
-import inspect, requests
+import inspect
 
 class SeqStoreApify(object):
 
@@ -51,9 +51,9 @@ class SeqStoreApify(object):
                 req = u2.Request( url, data=values, headers=headers)
                 req.get_method = lambda: 'GET'
             
-            elif method == 'GET 2':
+            """elif method == 'GET 2':
                 req = requests.get(url)
-                return req.content
+                return req.content"""
             
             res = u2.urlopen(req)
             
