@@ -1,8 +1,0 @@
-Set-Cookie: forrester-webprod=R3608902004; path=/
-Set-Cookie: incap_ses_721_813294=aoMRYPXovlMaqirx7IEBCll3aFoAAAAAxRzv3HZxByD4rdLjBONZjA==; path=/; Domain=.forrester.com
-X-Cdn: Incapsula
-Server: Apache
-Location: https://www.forrester.com/hub/analysts.xhtml?N=10011+975026&isAlpha=true
-Date: Wed, 24 Jan 2018 12:08:57 GMT
-X-Iinfo: 13-5813267-5816969 SNNN RT(1516795692535 44696) q(0 0 0 0) r(1 1) U5
-Content-Type: text/html; charset=iso-8859-1
