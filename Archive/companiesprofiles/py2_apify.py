@@ -70,7 +70,8 @@ class ApifyClient(object):
             if env in os.environ:
                 self.options[ env ] = os.environ.get(env)
         
-        self.options = options
+        
+        self.options = self.merge_options( options )
         
         self.keyValueStores = self.KeyValueStores(self.options, self.make_request, self.merge_options)
         self.datasets = self.Datasets(self.options, self.make_request, self.merge_options)
