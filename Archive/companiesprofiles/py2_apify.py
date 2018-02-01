@@ -60,7 +60,9 @@ class ApifyClient(object):
     def merge_options(self, options):
     
         _options = dict( self.options )
-        return _options.update(options)
+        _options.update(options)
+        
+        return _options 
 
     def __init__(self, options={}):
     
