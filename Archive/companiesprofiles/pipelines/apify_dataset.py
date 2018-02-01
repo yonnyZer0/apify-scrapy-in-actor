@@ -30,8 +30,8 @@ class DatasetPush(object):
         
         item_x['scraped_date_native'][0]= item_x['scraped_date_native'][0].strftime('%s')     
         
-        self.client.pushRecords( options={ 'data': item_x} )
-        print('################################################################')
+        push = self.client.pushRecords( options={ 'data': item_x} )
+        
         return item
 
 
