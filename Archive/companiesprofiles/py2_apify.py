@@ -28,7 +28,7 @@ class ApifyClient(object):
         req = u2.Request( url, data=values, headers=headers)    
         
         #self.last_exec_response = False
-        for i in range( options['expBackOffMaxRepeats'] ):
+        for i in range( json.options['expBackOffMaxRepeats'] ):
             try:
                 
                 if method == 'PUT':
