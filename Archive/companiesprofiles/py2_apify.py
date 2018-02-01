@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 import urllib2 as u2
-import os
+import os, json
 
 class ApifyClient(object):
     
