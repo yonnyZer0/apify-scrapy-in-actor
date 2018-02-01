@@ -1,11 +1,10 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 
 import urllib2 as u2
 import os
-#import urllib.parse
 import inspect
 
-class SeqStoreApify(object):
+class Dataset(object):
 
     def set_token(self, APIFY_TOKEN):
     
@@ -28,41 +27,32 @@ class SeqStoreApify(object):
         return filled
 
     def make_request(self, url, values=None, headers={}, method='GET'):
+        
         url = url.strip('?')
-        print( url )
+        req = u2.Request( url, data=values, headers=headers)    
         
         try:
             
             if method == 'PUT':
-                req = u2.Request( url )
                 req.get_method = lambda: 'PUT'
-                req.data=values
-                req.add_header('Content-Type', 'application/json')
                 
             elif method == 'DELETE':
-                req = u2.Request( url, data=values, headers=headers)
                 req.get_method = lambda: 'DELETE'
             
             elif method == 'POST':
-                req = u2.Request( url, data=values, headers=headers)
                 req.get_method = lambda: 'POST'
             
             elif method == 'GET':
-                req = u2.Request( url, data=values, headers=headers)
                 req.get_method = lambda: 'GET'
-            
-            """elif method == 'GET 2':
-                req = requests.get(url)
-                return req.content"""
             
             res = u2.urlopen(req)
             
-            return [res.read(), res]
+            return res
             
         except Exception as ex:
         
             print(ex)
-            return        
+            return False    
     
     def get_list_of_stores(self, offset=None, limit=None, desc=None, unnamed=None):
         
@@ -106,14 +96,16 @@ class SeqStoreApify(object):
     def put_record(self, storeId, payload):
   
         url = self.default_seq_store_url + storeId + '/records'
-        print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+        
         return self.make_request(url, values=payload, headers={'Content-Type': 'application/json'}, method='POST')
         
+    def save_to_kvstore(self, storeId, kvstoreId=None):
     
-    
-    
-    
-    
+        if kvstoreId == None:
+            kvstoreId = os.environ['APIFY_DEFAULT_KEY_VALUE_STORE_ID']
+        url = 'https://api.apify.com/v2/key-value-stores/' + kvstoreId + '/records/out'
+        
+        return self.make_request(url, values={'seqstore': storeId}, headers={'Content-Type': 'application/json'}, method='PUT')
     
     
     

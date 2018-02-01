@@ -13,7 +13,7 @@ USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:39.0) Gecko/20100
 ITEM_PIPELINES = {
     
     'companiesprofiles.pipelines.TextProcessingPipeline.TextProcessingPipeline': 300,
-    'companiesprofiles.pipelines.seq_store_integration.SequentialStoreReaderPipeline': 350,
+    'companiesprofiles.pipelines.apify_dataset.DatasetPush': 500,
     
     #'companiesprofiles.pipelines.profilesPersistencePipeline.ProfilesDBReaderPipeline': 350,
     #'companiesprofiles.pipelines.EmailFinderPipeline.EmailFinderPipeline': 400,
@@ -58,8 +58,6 @@ MONGO_DB = "profilesdb"
 MONGO_COLLECTION = "profiles"
 
 """
-
-APIFY_TOKEN=None
 
 # CLEARBIT API
 USE_CLEARBIT_API = False #yonny comment out
