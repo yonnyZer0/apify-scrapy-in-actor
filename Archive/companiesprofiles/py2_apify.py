@@ -15,7 +15,7 @@ class ApifyClient(object):
          
         url = 'https://api.apify.com/v2/datasets/' + _options['APIFY_DEFAULT_DATASET_ID'] + '/items'
         
-        return self.make_request(url, values=_options['data'], headers={'Content-Type': _options['contentType']}, method='PUT')
+        return self.make_request(url, values=_options['data'], headers={'Content-Type': _options['contentType']}, method='POST')
     
     ## Add timeout/delay to repeat
     def make_request(self, url, values=None, headers={}, method='GET'):
