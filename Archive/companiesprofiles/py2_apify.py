@@ -13,7 +13,7 @@ class ApifyClient(object):
         
         _options = self.merge_options(options)
          
-        url = 'https://api.apify.com/v2/datasets/' + _options['APIFY_DEFAULT_DATASET_ID'] + '/records'
+        url = 'https://api.apify.com/v2/datasets/' + _options['APIFY_DEFAULT_DATASET_ID'] + '/items'
         
         return self.make_request(url, values=_options['data'], headers={'Content-Type': _options['contentType']}, method='PUT')
     
@@ -154,7 +154,7 @@ class ApifyClient(object):
             
             _options = self.merge_options(options)
             
-            url = self.defaultDatasetsUrl + _options['datasetId'] + '/records'
+            url = self.defaultDatasetsUrl + _options['datasetId'] + '/items'
             
             return self.make_request(url, values=options['data'], headers={'Content-Type': _options['contentType']}, method='PUT')
     
